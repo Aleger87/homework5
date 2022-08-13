@@ -2,7 +2,7 @@
 
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println("Задание 1");
         /*1
         Объявите три массива:
         1. Целочисленный массив, заполненный тремя цифрами – 1, 2 и 3 – с помощью ключевого слова new.
@@ -38,8 +38,8 @@ public class Main {
 
 
         System.out.println("Задание 2");
-        int max = Math.max(weights.length, weight.length);
-        max = Math.max(max, drob.length);
+        // int max = Math.max(weights.length, weight.length);
+        // max = Math.max(max, drob.length);
 
         int i=0;
             while (i < weight.length){
@@ -64,8 +64,11 @@ public class Main {
         if (c != b){
             System.out.print(a + ",");
         }else {
-            System.out.print(a + " ");
+            System.out.println(a + " ");
         }
+
     }
+
+
 
 }

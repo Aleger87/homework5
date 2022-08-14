@@ -1,5 +1,3 @@
-
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание 1");
@@ -38,8 +36,7 @@ public class Main {
 
 
         System.out.println("Задание 2");
-        // int max = Math.max(weights.length, weight.length);
-        // max = Math.max(max, drob.length);
+
 
         int i=0;
             while (i < weight.length){
@@ -58,7 +55,47 @@ public class Main {
             }
 
 
+        System.out.println("Задание 3");
+            /*3
+            Теперь ваша задача – распечатать все элементы всех трех массивов, но начинать нужно не с первого элемента массива, а с последнего.
+            Элементы должны быть распечатаны через запятую, при этом элементы одного массива располагаются на одной строчке, а элементы другого массива – на другой.
+            Запятая между последним элементом одного массива и первым элементом следующего не нужна.
+            * */
+        i = weight.length-1;
+        while (i >= 0){
+            func (Integer.toString(weight[i]), 0, i);
+            i--;
+        }
+        i = drob.length-1;
+        while (i >= 0){
+            func (Float.toString(drob[i]), 0, i);
+            i--;
+        }
+        i = weights.length-1;
+        while (i >= 0){
+            func (Integer.toString(weights[i]), 0, i);
+            i--;
+        }
+
+        System.out.println("Задание 4");
+        /*
+        Пройдитесь по первому целочисленному массиву и все нечетные числа в нем сделайте четными (нужно прибавить 1).
+        Важно: код должен работать с любым целочисленным массивом, поэтому для решения задания вам нужно использовать циклы.
+        Распечатайте результат преобразования в консоль
+        * */
+        for (int j = 0; j < weight.length; j++) {
+            weight[j] = convertAnEven(weight[j]);
+            func (Integer.toString(weight[j]), weight.length-1, j);
+        }
+        for (int j = 0; j < weights.length; j++) {
+            weights[j] = convertAnEven(weights[j]);
+            func (Integer.toString(weights[j]), weights.length-1, j);
+        }
+
+
     }
+
+
 
     private static void func(String a, int b, int c) {
         if (c != b){
@@ -67,6 +104,13 @@ public class Main {
             System.out.println(a + " ");
         }
 
+    }
+
+    private static int convertAnEven(int a) {
+        if (a % 2 != 0) {
+            a += 1;
+        }
+        return a;
     }
 
 
